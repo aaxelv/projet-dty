@@ -8,7 +8,8 @@ Je n'arrive pas a upload le code sur github car il y a trop de fichier contenue 
 J'ai donc zippé :
 -Le back end
 -Le bootstrap
--Le front end en 2parties :
+car je ne peux pas non plus upload de fichier trop volumineux, et pour condenser en un seul fichier
 
-Pour reconstituer le dossier initial il faudrait créer un dossier avec :
-un dossier backend, un dosser bootstrap et un dossier frontend consitué des 2dossiers frontend
+Puis j'ai ajouté manuellement les fichiers du front end principaux ( le code ne marche pas car il manque le dossier node_module )
+
+
