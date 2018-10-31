@@ -1,6 +1,7 @@
 # projet-dty
+Pour lancer le projet :
 #Pour le frontend : dans frontend, ng serve
-#Pour le serveur, dans backend, on met :    npm run dev     dans backend
+#Pour le serveur, dans backend, on met :    npm run dev   
 
 
 Je n'arrive pas a upload le code sur github car il y a trop de fichier contenue dans le dossier total (je suis limité à 100fichiers par drag&drop alors que j'ai plusieurs miliers de fichiers dans mon dossier).
