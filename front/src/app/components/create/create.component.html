@@ -1,0 +1,36 @@
+<!-- Il faut ici pouvoir créer les notes de frais pour l'utilisateurs actuellement connectés, seul les champs importants sont choisis par l'user, c'est à dire : titre, date, montant, devise et description. Le reste est automatique ou ne doit pas être remplie dès la création ( comme les objections aux réctions des admins par exemple ) 
+-->
+
+<div class="container">
+	<br>
+	<mat-card>
+		<button mat-raised-button class= 'btn btn-danger' (click)= 'disconnect()'> Disconnect</button>
+		<section class = 'mat-typography'>
+			<h3>Créer une nouvelle note de frais</h3>
+		</section>
+		<mat-divider></mat-divider>
+		<br>
+		<form [formGroup] = "createForm" class = "create-form">
+			<mat-form-field class = 'field-full-width'>
+				<input matInput placeholder="Titre" formControlName="title" #title>
+			</mat-form-field>
+			<mat-form-field class = 'field-full-width'>
+				<input matInput placeholder="Date" formControlName="date" #date>
+			</mat-form-field>
+			<mat-form-field class = 'field-full-width'>
+				<input matInput placeholder="Montant" formControlName="ammount" #ammount>
+			</mat-form-field>			
+			<mat-form-field class = 'field-full-width'>
+				<input matInput placeholder="Devise" formControlName="devise" #devise>
+			</mat-form-field>
+			<mat-form-field class = 'field-full-width'>
+				<textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+			</mat-form-field>
+			<mat-divider></mat-divider>
+			<br><br>
+			<button mat-raised-button class="btn btn-primary" routerLink= "/list">Back</button>
+			<button type = "submit" (click) = "addIssue(title.value,date.value,ammount.value,devise.value,description.value)" [disabled] = "createForm.pristine || createForm.invalid" mat-raised-button class="btn btn-success">Save
+			</button>	
+		</form>
+	</mat-card>
+</div>

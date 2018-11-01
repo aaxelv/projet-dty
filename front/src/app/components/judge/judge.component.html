@@ -1,0 +1,66 @@
+<!-- Il faut ici afficher la notes de frais de utilisateur choisi, qui est lié à l'admin actuellement connectés, on choisit d'afficher toutes les infomations pour que l'admin puisse juger.
+-->
+
+<div class="container">
+	<br>
+	<mat-card>
+		<button mat-raised-button class= 'btn btn-danger' (click)= 'disconnect()'> Se déconnecter</button>
+		<br><br>
+		<mat-divider></mat-divider>
+		<br>
+			<mat-card>
+				<mat-card-title>Titre</mat-card-title>
+				<mat-card-content>{{issues.title}} </mat-card-content>
+			</mat-card>
+		<mat-card>
+			<mat-card-title>Responsable</mat-card-title>
+			<mat-card-content>{{issues.responsible}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Date</mat-card-title>
+			<mat-card-content>{{issues.date}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Montant</mat-card-title>
+			<mat-card-content>{{issues.ammount}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Devise</mat-card-title>
+			<mat-card-content>{{issues.devise}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Description</mat-card-title>
+			<mat-card-content>{{issues.description}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Status</mat-card-title>
+			<mat-card-content>{{issues.status}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Justification</mat-card-title>
+			<mat-card-content>{{issues.justification}} </mat-card-content>
+		</mat-card>
+		<mat-card>
+			<mat-card-title>Objection</mat-card-title>
+			<mat-card-content>{{issues.objection}} </mat-card-content>
+		</mat-card>
+		<br><br>
+		<form [formGroup] = "updateForm" class = "edit-form">
+			<mat-form-field class = 'field-full-width'>
+				<mat-select placeholder = "Status" formControlName="status" #status>
+					<mat-option value = "Non Validé">Non Validé</mat-option>
+					<mat-option value = "En attente">En attente</mat-option>
+					<mat-option value = "Validé">Validé</mat-option>
+					<mat-option value = "Refusé">Refusé</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field class = 'field-full-width'>
+				<textarea matInput placeholder="Justification" formControlName="justification" #justification></textarea>
+			</mat-form-field>
+			<mat-divider></mat-divider>
+			<br><br>
+			<button mat-raised-button class="btn btn-primary" routerLink= "/admin">Back</button>
+			<button type = "submit" (click) = "updateIssue(status.value,justification.value)" [disabled] = "updateForm.pristine || updateForm.invalid" mat-raised-button class="btn btn-success">Save</button>
+		</form>
+	</mat-card>
+</div>
